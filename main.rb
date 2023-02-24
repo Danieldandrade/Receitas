@@ -1,15 +1,19 @@
 INSERIR_RECEITAS = 1
 VISUALIZAR_RECEITAS = 2
-SAIR = 3
+BUSCA_DE_RECEITA= 3
+SAIR = 4
 
 def bem_vindo()
   puts "BEM VINDO AS MINHAS RECEITAS "
+  puts
   puts "Hoje iremos cadastar algumas receitas "
+  puts
 end
 
 def menu()
   puts "[#{INSERIR_RECEITAS}] Cadastrar uma receita "
   puts "[#{VISUALIZAR_RECEITAS}] Ver todas as receita "
+  puts "[#{BUSCA_DE_RECEITA}] Buscar receita"
   puts "[#{SAIR}] Sair "
   puts
   return gets.to_i()
@@ -51,6 +55,12 @@ loop do
     receitas << inserir_receita()    
   elsif(opção == VISUALIZAR_RECEITAS)
     imprimir_receitas(receitas)
+  elsif(opção != 4)
+    puts
+    puts "Opção invalida"
+    puts "Escolha uma das opções a baixo"
+    puts
+    
   elsif(opção == SAIR)
     break
   end
